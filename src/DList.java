@@ -129,7 +129,7 @@ public class DList<T extends Comparable<T>> implements IList<T>, Cloneable {
 			if(iterator2.data.compareTo(elem.data) == 0){
 				T data = iterator2.data;
 				iterator1.next = iterator2.next;
-				iterator2.prev = iterator1;
+				iterator2.next.prev = iterator1;
 				size--;
 				// garbage collection will do the rest
 				return data;
